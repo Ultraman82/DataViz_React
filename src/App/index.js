@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Welcome from './WelcomeMessage';
 import styled, {css} from 'styled-components';
+import AppLayout from './AppLayout'
 
 const MyButton = styled.div`
   color:green;
@@ -18,12 +19,9 @@ const TomatoButton = styled(MyButton)`
 
 function App() {
   return (
-    <div>
-      <Welcome/>      
-      <MyButton> Hello </MyButton>
-      <MyButton primary> Hello </MyButton>
-      <TomatoButton primary> Hello </TomatoButton>
-    </div>
+    <AppLayout>
+      <Welcome/>            
+    </AppLayout>
   );
 }
 
