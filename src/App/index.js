@@ -9,7 +9,7 @@ function App() {
   return (
     <AppLayout>
       <AppBar/>
-      <Welcome/>                  
+      <Welcome/>                        
     </AppLayout>
   );
 }
