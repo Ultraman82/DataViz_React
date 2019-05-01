@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Welcome (props) {
+function Welcome () {
   return <h1>Welcome to cryptoDash</h1>;
 }
 
