@@ -16,8 +16,7 @@ function App() {
           <Content>
             <Settings />
           </Content>
-      </AppProvider>
-      
+      </AppProvider>      
     </AppLayout>
   );
 }
