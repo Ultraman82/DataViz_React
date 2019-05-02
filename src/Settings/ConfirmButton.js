@@ -10,7 +10,7 @@ const ConfirmButtonStyled = styled.div`
 
 export const CenterDiv = styled.div`
     display: grid;
-    justify-counter: center;
+    justify-content: center;
 `
 
 export default function (){
@@ -18,7 +18,9 @@ export default function (){
     <AppContext.Consumer>
         {({confirmFavorites}) =>
          <ConfirmButtonStyled onClick={confirmFavorites}>
-            Confirm confirmFavorites
+            <CenterDiv>
+                Confirm confirmFavorites
+            </CenterDiv>            
         </ConfirmButtonStyled>}
     </AppContext.Consumer>
 
