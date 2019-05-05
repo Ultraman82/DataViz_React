@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {AppContext} from "../App/AppProvider";
 //import {SelectableTile} from "../Shared/Tile";
 import CoinTile from "./CoinTile";
-import { filter } from 'fuzzy';
+//import { filter } from 'fuzzy';
 
 export const CoinGridStyled = styled.div`
     display: grid;
@@ -24,13 +24,13 @@ function getCoinsToDisplay(coinList, topSection, favorites, filterCoins){
 export default function ({topSection}){
     return (
         <AppContext.Consumer>
-            {({coinList, favorites, filteredCoins}) => 
+            {({coinList, favorites, filteredCoins}) => (
                 <CoinGridStyled>
                     {getCoinsToDisplay(coinList, topSection, favorites, filteredCoins).map(coinKey => 
-                    <CoinTile topSection={topSection} coinKey={coinKey} />
+                    <CoinTile key={coinKey} topSection={topSection} coinKey={coinKey} />
                     )}
                 </CoinGridStyled>
-            }
+            )}
         </AppContext.Consumer>
-    )
+    );
 }
