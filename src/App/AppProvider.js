@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import _ from 'lodash';
 const cc = require('cryptocompare');
-
+cc.setApiKey('49db4dd3a0b08f91a5d85f1aee84ad649050b2a65ca6f28e635be7fc38fc1e07')
 export const AppContext = React.createContext();
 
 const MAX_FAVORITES = 10;
@@ -15,14 +15,15 @@ export class AppProvider extends React.Component{
             page: 'dashboard',
             favorites: ['BTC', 'ETH', 'XMR', 'DOGE'],
             ...this.savedSettings(),
+            timeInterval: 'months', 
             setPage: this.setPage,
             addCoin: this.addCoin,
             removeCoin: this.removeCoin, 
             isInFavorites: this.isInFavorites,
             confirmFavorites: this.confirmFavorites,
             setCurrentFavorite: this.setCurrentFavorite,
-            setFilteredCoins: this.setFilteredCoins
-            
+            setFilteredCoins: this.setFilteredCoins,
+            changeChartSelect: this.changeChartSelect            
         }
     }    
 
@@ -65,7 +66,7 @@ export class AppProvider extends React.Component{
             {
                 name: this.state.currentFavorite,
                 data: results.map((ticker, index) => [
-                    moment().subtract({months: TIME_UNIT - index}).valueOf(), 
+                    moment().subtract({[this.state.timeInterval]: TIME_UNIT - index}).valueOf(), 
                     ticker.USD
                 ])
             }
@@ -94,11 +95,11 @@ export class AppProvider extends React.Component{
                     this.state.currentFavorite,
                     ['USD'],
                     moment()
-                    .subtract({months: units})
+                    .subtract({[this.state.timeInterval]: units})
                     .toDate()
                 )
             )
-        }
+        }        
         return Promise.all(promises);
     }
     
@@ -142,6 +143,11 @@ export class AppProvider extends React.Component{
     setPage = page => this.setState({page});
 
     setFilteredCoins = (filteredCoins) => this.setState({filteredCoins});
+
+    changeChartSelect = (value) => {        
+        this.setState({timeInterval: value, historical: null});
+        this.fetchHistorical();
+    }
 
     render(){
         return(
