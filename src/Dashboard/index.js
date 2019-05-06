@@ -19,7 +19,7 @@ export default function(){
             <PriceGrid />
             <ChartGird>
             <CoinSpotLight />             
-            <PriceChart/>
+            <PriceChart/ >
             </ChartGird>
         </Page>
     )
