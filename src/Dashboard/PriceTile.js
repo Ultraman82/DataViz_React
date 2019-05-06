@@ -84,7 +84,7 @@ export default function ({price, index}){
                 <TileClass 
                     sym={sym} 
                     data={data} 
-                    currentFavorite={currentFavorite == sym}
+                    currentFavorite={currentFavorite === sym}
                     setCurrentFavorite={()=>  setCurrentFavorite(sym)}
                     >            
 

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {backgroundColor2, fontSize2}  from "../Shared/Styles";
 import {AppContext} from "../App/AppProvider";
 import _ from 'lodash';
-import fuzzy, {filter} from 'fuzzy';
+import fuzzy from 'fuzzy';
 
 const SearchGrid = styled.div `
     display: grid;
