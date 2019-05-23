@@ -72,17 +72,6 @@ export class AppProvider extends React.Component{
             }
         ];
         this.setState({historical});
-        let BTCresults = await this.BTChistorical();                
-        let BTChistorical = [
-            {
-                name: 'BTC',
-                data: BTCresults.map((ticker, index) => [
-                    moment().subtract({[this.state.timeInterval]: TIME_UNIT - index}).valueOf(), 
-                    ticker.USD
-                ])
-            }
-        ];
-        this.setState({BTChistorical});
     }
     
     prices = async () => {
@@ -113,21 +102,6 @@ export class AppProvider extends React.Component{
         }        
         return Promise.all(promises);
     }
-    BTChistorical = () => {
-        let promises = [];
-        for (let units = TIME_UNIT;units > 0; units--){
-            promises.push(
-                cc.priceHistorical(
-                    'BTC',
-                    ['USD'],
-                    moment()
-                    .subtract({[this.state.timeInterval]: units})
-                    .toDate()
-                )
-            )
-        }        
-        return Promise.all(promises);
-    }
     
     confirmFavorites = () => {
         let currentFavorite = this.state.favorites[0];
@@ -136,8 +110,7 @@ export class AppProvider extends React.Component{
             page: 'dashboard',
             currentFavorite,
             prices: null,
-            historical: null,
-            BTChistorical: null
+            historical: null
         }, () => {
             this.fetchPrices();
             this.fetchHistorical();
@@ -151,8 +124,7 @@ export class AppProvider extends React.Component{
     setCurrentFavorite = (sym) => {
         this.setState({
             currentFavorite: sym,
-            historical: null,
-            BTChistorical: null,
+            historical: null
         }, this.fetchHistorical);
         localStorage.setItem('cryptoDash', JSON.stringify({
             ...JSON.parse(localStorage.getItem('cryptoDash')),
