@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.55fd877a.chunk.css",
-    "main.js": "/static/js/main.f0de4d8f.chunk.js",
-    "main.js.map": "/static/js/main.f0de4d8f.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.fcf58433.chunk.js": "/static/js/2.fcf58433.chunk.js",
-    "static/js/2.fcf58433.chunk.js.map": "/static/js/2.fcf58433.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.9c0833a9763d41f38b0807ed1d0a093c.js": "/precache-manifest.9c0833a9763d41f38b0807ed1d0a093c.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.55fd877a.chunk.css.map": "/static/css/main.55fd877a.chunk.css.map"
+    "main.css": "https//Ultraman82.github.io/DataViz_React/static/css/main.55fd877a.chunk.css",
+    "main.js": "https//Ultraman82.github.io/DataViz_React/static/js/main.f3475cd5.chunk.js",
+    "main.js.map": "https//Ultraman82.github.io/DataViz_React/static/js/main.f3475cd5.chunk.js.map",
+    "runtime~main.js": "https//Ultraman82.github.io/DataViz_React/static/js/runtime~main.bc2631a1.js",
+    "runtime~main.js.map": "https//Ultraman82.github.io/DataViz_React/static/js/runtime~main.bc2631a1.js.map",
+    "static/js/2.d4bedf72.chunk.js": "https//Ultraman82.github.io/DataViz_React/static/js/2.d4bedf72.chunk.js",
+    "static/js/2.d4bedf72.chunk.js.map": "https//Ultraman82.github.io/DataViz_React/static/js/2.d4bedf72.chunk.js.map",
+    "index.html": "https//Ultraman82.github.io/DataViz_React/index.html",
+    "precache-manifest.1eae8384895da0c0659ee100e1c08c58.js": "https//Ultraman82.github.io/DataViz_React/precache-manifest.1eae8384895da0c0659ee100e1c08c58.js",
+    "service-worker.js": "https//Ultraman82.github.io/DataViz_React/service-worker.js",
+    "static/css/main.55fd877a.chunk.css.map": "https//Ultraman82.github.io/DataViz_React/static/css/main.55fd877a.chunk.css.map"
   }
 }
